@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".MainActivity">
+    android:visibility="visible"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
 
     <EditText
         android:id="@+id/edt_distancia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
         android:layout_marginTop="8dp"
-        android:hint="@string/distancia" />
+        android:hint="@string/distancia"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,8 +29,8 @@
         android:id="@+id/edt_preco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:hint="@string/preco" />
+        android:hint="@string/preco"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,9 +41,9 @@
     <EditText
         android:id="@+id/edt_autonomia"
         android:layout_width="match_parent"
-        android:inputType="numberDecimal"
         android:layout_height="wrap_content"
-        android:hint="@string/autonomia" />
+        android:hint="@string/autonomia"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,8 +64,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/purple_700"
         android:text="R$ 0"
+        android:textColor="@color/purple_700"
         android:textSize="45dp" />
 
     <Button
@@ -70,7 +73,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="CALCULAR"
-        />
+        android:text="CALCULAR" />
 
 </LinearLayout>

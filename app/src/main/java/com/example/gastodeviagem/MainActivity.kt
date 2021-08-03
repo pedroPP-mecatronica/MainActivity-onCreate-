@@ -2,6 +2,7 @@ package com.example.gastodeviagem
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,11 +25,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun calculate() {
         if (validationOK()) {
-            val distance = edt_distancia.text.toString().toFloat()
-            val preco = edt_preco.text.toString().toFloat()
-            val autonomia = edt_autonomia.text.toString().toFloat()
-            val gasto = (preco * distance) / autonomia
-            valueTotal.text = "R$ ${"%.2f".format(gasto)}"
+            try {
+                val distance = edt_distancia.text.toString().toFloat()
+                val preco = edt_preco.text.toString().toFloat()
+                val autonomia = edt_autonomia.text.toString().toFloat()
+                val gasto = (preco * distance) / autonomia
+                valueTotal.text = "R$ ${"%.2f".format(gasto)}"
+            } catch (nfe: NumberFormatException) {
+                Toast.makeText(this, "Informe valores válidos", Toast.LENGTH_LONG).show()
+            }
+
+        } else {
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_LONG).show()
         }
     }
 
